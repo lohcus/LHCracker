@@ -8,8 +8,9 @@ print ""
 
 fullHash = raw_input("Informe a hash de senha Linux completa: ")
 wordlist = raw_input("Informe a Wordlist: ")
-salt = fullHash[:12]
-    
+salt = int(raw_input("Informe o tamanho do salt: "))-1
+salt = fullHash[:salt]
+
 with open(wordlist, "rU") as infile:
     for line in infile:
         line = line.strip()
